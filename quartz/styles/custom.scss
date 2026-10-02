@@ -509,3 +509,58 @@ article {
   #quartz-body .center > .page-header { padding: 20px 20px 8px; }
   #quartz-body .center > article { padding: 6px 20px 24px; }
 }
+
+// ---------------------------------------------------------------------------
+// Let the sidebar panels grow with their contents.
+//
+// Quartz makes each sidebar a sticky `height: 100vh` flex column, so its
+// panels share one fixed viewport height and each scrolls internally — a note
+// with twelve backlinks shows four in a cramped little scroll box. In a garden
+// the backlinks ARE the content, so instead the panels size to their contents
+// and the sidebar column as a whole scrolls if it outgrows the viewport.
+// ---------------------------------------------------------------------------
+
+.page > #quartz-body .sidebar.right {
+  height: auto;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+  scrollbar-width: thin;
+}
+
+@media all and (min-width: 1200px) {
+  .page > #quartz-body .sidebar.left {
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+  }
+}
+
+// Release the internal caps on the lists themselves
+.page > #quartz-body .sidebar {
+  .backlinks > ul.overflow,
+  .toc > ul.toc-content.overflow,
+  ul.overflow,
+  ol.overflow {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  div:has(> .overflow) {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  // The fade-out mask and spacer only make sense on a scrolling list
+  ul.overflow.gradient-active,
+  ol.overflow.gradient-active {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  li.overflow-end { display: none; }
+
+  & > * { max-height: none; }
+}
