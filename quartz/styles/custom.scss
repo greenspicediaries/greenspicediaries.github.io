@@ -1,5 +1,6 @@
 @use "./variables.scss" as *;
 
+
 // ===========================================================================
 // Playful Garden — the greenhouse look.
 //
@@ -41,7 +42,12 @@ body {
   line-height: 1.65;
 }
 
+// Quartz loads Fredoka at 400 and 700 only, and sets headings to
+// `font-weight: revert` — i.e. browser-default bold. Fredoka 700 is a very
+// heavy, round face and every heading on the site was landing on it. 400 is
+// the other loaded weight, so this stays crisp with no synthesised strokes.
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
   letter-spacing: -0.005em;
 }
 
@@ -52,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 a.internal {
   background-color: var(--highlight);
   color: var(--secondary);
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 6px;
   padding: 0 3px;
   margin: 0 -1px;
@@ -78,7 +84,7 @@ a.internal.tag-link {
   border-radius: 99px;
   padding: 2px 10px;
   font-size: 0.82em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 // ---------------------------------------------------------------------------
@@ -237,8 +243,8 @@ body[data-slug="index"] #quartz-body .center {
   }
 
   h3 {
-    font-size: 0.95rem;
-    color: var(--gsd-ever);
+    font-size: 0.88rem;
+    color: var(--gray);
     margin: 0 0 8px;
   }
 }
@@ -258,8 +264,11 @@ body[data-slug="index"] #quartz-body .center {
 
 .page-title {
   font-family: var(--headerFont);
+  font-weight: 400;
   color: var(--gsd-ever);
   margin-bottom: 14px;
+
+  a { font-weight: inherit; }
 }
 
 // Search as a rounded pill
@@ -277,7 +286,7 @@ body[data-slug="index"] #quartz-body .center {
   button.explorer-toggle { font-family: var(--headerFont); }
 
   ul.explorer-ul {
-    a { background: none; padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+    a { background: none; padding: 2px 6px; border-radius: 8px; font-weight: 400; }
     a:hover { background: var(--gsd-chip); }
   }
 }
@@ -291,7 +300,7 @@ body[data-slug="index"] #quartz-body .center {
 article {
   h2 {
     color: var(--gsd-ever);
-    font-size: 1.28rem;
+    font-size: 1.2rem;
     margin: 26px 0 8px;
   }
 
@@ -349,7 +358,7 @@ article {
 .garden-tagline {
   font-family: var(--headerFont);
   font-size: 1.85rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.15;
   color: var(--gsd-ever);
   margin: 0 0 10px;
@@ -429,7 +438,8 @@ article {
     font-size: 1.1rem;
     color: var(--gsd-ever);
 
-    a { background: none; padding: 0; margin: 0; color: inherit; }
+    // the bed title is itself a wikilink; it must not inherit the link weight
+    a { background: none; padding: 0; margin: 0; color: inherit; font-weight: inherit; }
   }
 
   p { margin: 6px 0 0; font-size: 0.9rem; color: var(--gray); line-height: 1.55; }
@@ -437,7 +447,7 @@ article {
 
 .bed-count {
   font-family: var(--bodyFont);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.74rem;
   background: var(--gsd-chip);
   color: var(--secondary);
@@ -466,7 +476,7 @@ article {
     font-size: 0.9rem;
     margin: 0;
 
-    a { background: none; padding: 0; }
+    a { background: none; padding: 0; font-weight: inherit; }
     small { display: block; color: var(--gray); font-size: 0.78rem; font-weight: 400; }
   }
 }
