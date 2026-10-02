@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: anudeeps28.github.io/green-spice-diaries
+  baseUrl: greenspicediaries.github.io
   ignorePatterns:
     - 00-Inbox
     - Templates
@@ -120,8 +120,11 @@ plugins:
     enabled: true
   - source: github:quartz-community/og-image
     enabled: true
+  # No custom domain — the site is served at the bare greenspicediaries.github.io
+  # user-site subdomain. A CNAME file here would be read by GitHub as a custom
+  # domain pointing at itself. Re-enable this if a real domain is ever added.
   - source: github:quartz-community/cname
-    enabled: true
+    enabled: false
   - source: github:quartz-community/canvas-page
     enabled: true
   - source: github:quartz-community/content-page
