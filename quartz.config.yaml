@@ -76,6 +76,12 @@ plugins:
     order: 40
   - source: github:quartz-community/table-of-contents
     enabled: true
+    options:
+      # Every atomic note has the identical Idea Compass outline (Idea,
+      # Definition, Source, Compass), so a per-note table of contents carries
+      # no information and crowds out the backlinks. Pages that genuinely need
+      # one — the roadmaps — opt in with `enableToc: true` in frontmatter.
+      showByDefault: false
     order: 50
     layout:
       position: right

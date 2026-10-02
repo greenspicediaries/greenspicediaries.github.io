@@ -2,6 +2,7 @@
 type: roadmap
 tags: [stage/budding, cuisine/indian, technique, roadmap]
 date: 2026-10-01
+enableToc: true
 ---
 
 # Learn to Cook Indian Food Roadmap
