@@ -20,3 +20,6 @@ public/
 /Pasted image *.png
 CLAUDE.md
 tasks/
+
+# Agent tooling (prompt files, not garden content)
+.agents/

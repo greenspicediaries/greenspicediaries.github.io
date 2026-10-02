@@ -15,6 +15,7 @@
   --gsd-sunk: #f4f8f0; // recessed tiles (compass, graph wells)
   --gsd-chip: #e5efdc; // count pills, active nav
   --gsd-warm: #f6f2df; // the "idea" highlight box
+  --gsd-link: #1d5c38;   // 7.0:1 on the pill, 7.9:1 on white — AAA
   --gsd-seed: #c79a1e;
   --gsd-bud: #6aa84f;
   --gsd-ever: #1f5e3a;
@@ -30,6 +31,7 @@
   --gsd-sunk: #192118;
   --gsd-chip: #24331f;
   --gsd-warm: #2a2715;
+  --gsd-link: #8fd3a6;
   --gsd-seed: #d8b45e;
   --gsd-bud: #8cc47a;
   --gsd-ever: #a9d8b4;
@@ -55,37 +57,82 @@ h1, h2, h3, h4, h5, h6 {
 // Wikilinks — the garden's connective tissue, so they get real presence
 // ---------------------------------------------------------------------------
 
-a.internal {
+// One link colour, two contexts.
+//
+// Inline in prose a link interrupts a sentence, so it gets the soft pill that
+// makes it scannable — this is the design's signature. In a list (backlinks,
+// explorer, outline, freshly planted) the items are already separated, so a
+// pill on each would be noise; those stay plain text in the same colour and
+// underline on hover. Everything uses --gsd-link, which clears AAA contrast on
+// every surface it sits on; the previous green managed only 4.6:1 on the pill
+// and read washed out.
+
+a.internal,
+a.external {
+  color: var(--gsd-link);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+// Inline, in prose
+article a.internal:where(:not([role="anchor"]):not(.tag-link)) {
   background-color: var(--highlight);
-  color: var(--secondary);
   font-weight: 600;
   border-radius: 6px;
   padding: 0 3px;
   margin: 0 -1px;
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
 
   &:hover {
     background-color: var(--gsd-chip);
     color: var(--gsd-ever);
   }
-
-  // Heading anchors and tag pills opt out of the pill treatment below
-  &[role="anchor"] {
-    background-color: transparent;
-    padding: 0;
-  }
 }
 
-// Tags render as soft pills
+// Heading anchors never take the pill
+a.internal[role="anchor"] {
+  background-color: transparent;
+  padding: 0;
+}
+
+// Tags keep their own pill shape
 a.internal.tag-link {
   background-color: var(--gsd-chip);
-  color: var(--secondary);
+  color: var(--gsd-link);
   border-radius: 99px;
   padding: 2px 10px;
   font-size: 0.82em;
   font-weight: 600;
 }
+
+// In a list or navigation: plain text, underline on hover
+.sidebar a.internal,
+article .garden-fresh a.internal,
+article .garden-bed .bed-head a.internal,
+.breadcrumb-container a {
+  background: none;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    background: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.breadcrumb-container a { color: var(--gray); }
+
+// Keyboard focus was invisible everywhere — an accessibility requirement
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gsd-bud);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Avoid single-word orphans on the last line of a paragraph
+article p { text-wrap: pretty; }
 
 // ---------------------------------------------------------------------------
 // Growth stages — every note carries one stage tag. Colour-coded by href, so
