@@ -1,0 +1,50 @@
+name: Keep old URLs alive
+
+# Safety net for the pre-commit hook.
+#
+# The hook lives in .git/hooks/ and is therefore NOT part of the repository:
+# it won't exist on a fresh clone, on a second machine, or when a note is
+# edited through the GitHub web UI. This job re-runs the same script against
+# whatever actually landed on main, and commits any redirects that are missing.
+#
+# Loop safety: pushes made with GITHUB_TOKEN do not trigger workflow runs,
+# so this job cannot re-trigger itself.
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garden-aliases
+  cancel-in-progress: false
+
+jobs:
+  aliases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2 # need the previous commit to detect renames
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Record old URLs for any moved or renamed notes
+        run: node scripts/garden.mjs aliases --since HEAD~1
+
+      - name: Commit redirects if anything changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to do — no notes moved or renamed."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: preserve old URLs for moved notes"
+          git push

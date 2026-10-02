@@ -1,0 +1,22 @@
+# ── Private vault folders (NEVER pushed to GitHub) ───────────────────────────
+00-Inbox/
+Templates/
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Obsidian ─────────────────────────────────────────────────────────────────
+.obsidian/
+
+# ── Quartz build artifacts ───────────────────────────────────────────────────
+node_modules/
+public/
+.quartz/
+.quartz-cache/
+
+# ── Project files not needed in repo ─────────────────────────────────────────
+.inbox-processing.log
+.claude/
+/Pasted image *.png
+CLAUDE.md
+tasks/

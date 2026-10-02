@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Digital garden pre-commit hook.
+#
+#   1. Any note that moved or was renamed gets its old URL recorded as an
+#      alias, so the old address keeps redirecting. Renames also get their
+#      [[wikilinks]] retargeted across the garden.
+#   2. Structural problems (duplicate filenames, missing frontmatter) block
+#      the commit. Dangling links do not — those are unwritten-note seeds.
+#
+# Install with:  npm run garden:install-hook
+
+set -e
+
+node scripts/garden.mjs aliases --staged
+node scripts/garden.mjs check
