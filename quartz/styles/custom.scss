@@ -538,29 +538,9 @@ article {
   }
 }
 
-// Release the internal caps on the lists themselves
-.page > #quartz-body .sidebar {
-  .backlinks > ul.overflow,
-  .toc > ul.toc-content.overflow,
-  ul.overflow,
-  ol.overflow {
-    max-height: none;
-    overflow-y: visible;
-  }
-
-  div:has(> .overflow) {
-    max-height: none;
-    overflow-y: visible;
-  }
-
-  // The fade-out mask and spacer only make sense on a scrolling list
-  ul.overflow.gradient-active,
-  ol.overflow.gradient-active {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  li.overflow-end { display: none; }
-
-  & > * { max-height: none; }
-}
+// Nothing else is overridden. Quartz clips these panels with
+// `div:has(> .overflow) { overflow-y: hidden }`, and collapsing the table of
+// contents only shrinks its flex basis — that clipping is what hides the
+// content. Removing it makes a collapsed panel spill over its neighbour.
+// With the column no longer pinned to 100vh, the panels' own `max-height:
+// 100%` resolves against a content-sized parent and they grow on their own.
