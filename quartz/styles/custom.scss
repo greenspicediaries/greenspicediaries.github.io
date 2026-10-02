@@ -555,17 +555,88 @@ article {
   .garden-fresh ul { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media all and (max-width: 800px) {
+// ── Phones ──────────────────────────────────────────────────────────────────
+// The grids collapse on their own, but the Quartz defaults underneath are tuned
+// for a mouse: the left sidebar becomes a sticky top bar that a two-line title
+// makes tall, and the explorer rows and header controls are well under a
+// comfortable touch target.
+@media all and ($mobile) {
   .garden-hero {
     grid-template-columns: 1fr;
     padding: 24px 22px;
     gap: 22px;
   }
+
   .garden-beds,
   .garden-fresh ul { grid-template-columns: 1fr; }
-  #quartz-body .center > .page-header { padding: 20px 20px 8px; }
-  #quartz-body .center > article { padding: 6px 20px 24px; }
+
+  #quartz-body .center > .page-header { padding: 20px 18px 8px; }
+  #quartz-body .center > article { padding: 6px 18px 24px; }
+
+  // The sticky top bar has to stay short, so the title shrinks and the search
+  // button drops to its icon — which also frees the width the label was taking.
+  .left.sidebar {
+    gap: 0.4rem;
+    min-width: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .page-title {
+    flex: 1 1 auto;
+    min-width: min-content; // a shrinkable title breaks mid-word
+    font-size: 1.05rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+
+  .search .search-button {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+
+    & > p { display: none; }
+  }
+
+  // Every control in the bar gets a real touch area
+  .darkmode,
+  .readermode,
+  .explorer-toggle.mobile-explorer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  // Explorer rows become a list of ~40px rows rather than 21px hairlines
+  .explorer {
+    .nav-file-title.tree-item-self { display: block; padding: 0.5rem 0; }
+    .folder-button { padding: 0.4rem 0; }
+    ul.explorer-ul a { padding: 0.45rem 6px; display: block; }
+  }
+
+  // A result card running eight lines leaves room for two results
+  .result-card .card-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // Titles set for a wide column are too loud on a 390px screen
+  .article-title { font-size: 1.9rem; }
+  .garden-tagline { font-size: 1.5rem; }
+
+  // Compass tiles and the idea box want their padding back on a narrow screen
+  article h2#idea + p { padding: 12px 14px; }
+  article h2#compass ~ p { padding: 12px 14px; }
 }
+
+// The page should not scroll underneath the open search modal
+body:has(.search-container.active) { overflow: hidden; }
 
 // ---------------------------------------------------------------------------
 // Let the sidebar panels grow with their contents.
@@ -577,12 +648,16 @@ article {
 // and the sidebar column as a whole scrolls if it outgrows the viewport.
 // ---------------------------------------------------------------------------
 
-.page > #quartz-body .sidebar.right {
-  height: auto;
-  max-height: 100vh;
-  overflow-y: auto;
-  padding-bottom: 2rem;
-  scrollbar-width: thin;
+// Desktop only: on a phone Quartz lays the right sidebar out as a horizontal
+// row, where a 100vh cap and its own scroll container make no sense.
+@media all and not ($mobile) {
+  .page > #quartz-body .sidebar.right {
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+  }
 }
 
 @media all and (min-width: 1200px) {
