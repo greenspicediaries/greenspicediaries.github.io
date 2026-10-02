@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [content/strategy, nutrition]
+tags: [stage/budding, content/strategy, nutrition]
 date: 2026-10-01
 ---
 

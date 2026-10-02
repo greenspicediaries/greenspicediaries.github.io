@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [technique/heat, nutrition/food-science]
+tags: [stage/evergreen, technique/heat, nutrition/food-science]
 date: 2026-10-01
 ---
 

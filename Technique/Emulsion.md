@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [technique/sauce, technique/texture]
+tags: [stage/evergreen, technique/sauce, technique/texture]
 date: 2026-10-01
 ---
 

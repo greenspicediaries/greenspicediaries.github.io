@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [mental-model, routine, framework]
+tags: [stage/evergreen, mental-model, routine, framework]
 date: 2026-10-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [content/strategy, content/writing]
+tags: [stage/seed, content/strategy, content/writing]
 date: 2026-10-01
 ---
 

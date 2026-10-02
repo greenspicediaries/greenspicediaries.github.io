@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [kitchen/systems, technique]
+tags: [stage/evergreen, kitchen/systems, technique]
 date: 2026-10-01
 ---
 

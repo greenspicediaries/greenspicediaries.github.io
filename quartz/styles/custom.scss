@@ -1,74 +1,511 @@
 @use "./variables.scss" as *;
 
-// Landing page styles
-.garden-hero {
-  text-align: center;
-  margin: 2rem 0 1.5rem;
+// ===========================================================================
+// Playful Garden — the greenhouse look.
+//
+// Soft greens on a pale leaf background with a warm seed-yellow, Fredoka for
+// rounded headings and Nunito for reading, and generous rounded corners on
+// every surface. The palette itself lives in quartz.config.yaml; everything
+// here is shape, surface and the garden-specific components.
+// ===========================================================================
+
+:root {
+  --gsd-surface: #ffffff;
+  --gsd-sunk: #f4f8f0; // recessed tiles (compass, graph wells)
+  --gsd-chip: #e5efdc; // count pills, active nav
+  --gsd-warm: #f6f2df; // the "idea" highlight box
+  --gsd-seed: #c79a1e;
+  --gsd-bud: #6aa84f;
+  --gsd-ever: #1f5e3a;
+
+  --gsd-r-lg: 22px;
+  --gsd-r-md: 18px;
+  --gsd-r-sm: 14px;
+  --gsd-shadow: 0 1px 2px rgba(31, 45, 32, 0.04), 0 4px 16px rgba(31, 45, 32, 0.04);
 }
 
-.garden-tagline {
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--dark);
-  margin-bottom: 0.5rem;
+:root[saved-theme="dark"] {
+  --gsd-surface: #1b231a;
+  --gsd-sunk: #192118;
+  --gsd-chip: #24331f;
+  --gsd-warm: #2a2715;
+  --gsd-seed: #d8b45e;
+  --gsd-bud: #8cc47a;
+  --gsd-ever: #a9d8b4;
+  --gsd-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.22);
 }
 
-.garden-subtitle {
-  font-size: 0.95rem;
-  color: var(--gray);
-  font-style: italic;
+// Fredoka and Nunito both sit small; nudge the base size up a touch.
+body {
+  font-size: 15.5px;
+  line-height: 1.65;
 }
 
-.garden-areas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0;
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.005em;
 }
 
-.garden-area {
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  background: var(--highlight);
-  border: 1px solid var(--lightgray);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+// ---------------------------------------------------------------------------
+// Wikilinks — the garden's connective tissue, so they get real presence
+// ---------------------------------------------------------------------------
+
+a.internal {
+  background-color: var(--highlight);
+  color: var(--secondary);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0 3px;
+  margin: 0 -1px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 
   &:hover {
-    border-color: var(--secondary);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    background-color: var(--gsd-chip);
+    color: var(--gsd-ever);
+  }
+
+  // Heading anchors and tag pills opt out of the pill treatment below
+  &[role="anchor"] {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+// Tags render as soft pills
+a.internal.tag-link {
+  background-color: var(--gsd-chip);
+  color: var(--secondary);
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 0.82em;
+  font-weight: 700;
+}
+
+// ---------------------------------------------------------------------------
+// Growth stages — every note carries one stage tag. Colour-coded by href, so
+// no extra plugin or component is needed to render the badge.
+// ---------------------------------------------------------------------------
+
+a.tag-link[href*="stage/"] {
+  font-family: var(--headerFont);
+  padding-left: 24px;
+  position: relative;
+  // The tag's own text is the raw slug ("stage/evergreen"); the badge shows
+  // the stage name instead, supplied per-stage by ::after below.
+  font-size: 0;
+
+  &::after { font-size: 0.82rem; }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin-top: -4.5px;
+    border-radius: 50%;
+  }
+}
+
+a.tag-link[href$="stage/seed"] {
+  &::after { content: "Seed"; }
+  background-color: #f6efd6;
+  color: #8a6b11;
+  &::before { background: var(--gsd-seed); }
+}
+
+a.tag-link[href$="stage/budding"] {
+  &::after { content: "Budding"; }
+  background-color: #e8f3df;
+  color: #3f7f2b;
+  &::before { background: var(--gsd-bud); }
+}
+
+a.tag-link[href$="stage/evergreen"] {
+  &::after { content: "Evergreen"; }
+  background-color: #dcebdf;
+  color: var(--gsd-ever);
+  &::before { background: var(--gsd-ever); }
+}
+
+:root[saved-theme="dark"] {
+  a.tag-link[href$="stage/seed"] {
+  &::after { content: "Seed"; } background-color: #2f2a16; color: #d8b45e; }
+  a.tag-link[href$="stage/budding"] {
+  &::after { content: "Budding"; } background-color: #22301d; color: #8cc47a; }
+  a.tag-link[href$="stage/evergreen"] {
+  &::after { content: "Evergreen"; } background-color: #1d2c22; color: #a9d8b4; }
+}
+
+// ---------------------------------------------------------------------------
+// The note itself sits on a raised rounded card
+// ---------------------------------------------------------------------------
+
+#quartz-body .center {
+  & > .page-header,
+  & > article {
+    background: var(--gsd-surface);
+    border: 1px solid var(--lightgray);
+    box-shadow: var(--gsd-shadow);
+  }
+
+  & > .page-header {
+    border-radius: var(--gsd-r-lg) var(--gsd-r-lg) 0 0;
+    border-bottom: none;
+    padding: 26px 32px 10px;
+    margin: 1.5rem 0 0;
+  }
+
+  & > article {
+    border-radius: 0 0 var(--gsd-r-lg) var(--gsd-r-lg);
+    border-top: none;
+    padding: 6px 32px 30px;
+    margin-top: 0;
+  }
+
+  // The note title already appears as .article-title above; the `# Title`
+  // every note opens with would otherwise render it a second time.
+  & > article .markdown-preview-view > h1:first-child { display: none; }
+}
+
+// The landing page is its own composition — no card wrapper, and none of the
+// stock article furniture (title, date, read time): the hero says all of it.
+#quartz-body body[data-slug="index"] .center,
+body[data-slug="index"] #quartz-body .center {
+  & > .page-header,
+  & > article {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  & > .page-header { display: none; }
+}
+
+.article-title {
+  margin: 10px 0 6px;
+  color: var(--gsd-ever);
+  line-height: 1.15;
+}
+
+.breadcrumb-container {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin: 0;
+}
+
+.content-meta {
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+// Properties panel — soften into the card rather than sitting as a grey box
+.note-properties {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 6px 0 2px;
+
+  .note-properties-header { display: none; }
+  .note-properties-table { margin: 0; }
+  .note-properties-row,
+  .note-properties-key,
+  .note-properties-value { border: none; background: none; padding: 0; }
+  .note-properties-key { display: none; }
+  .note-properties-value { padding: 2px 0; }
+  .note-properties-separator { display: none; }
+  .note-properties-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+}
+
+// ---------------------------------------------------------------------------
+// Sidebars become soft cards
+// ---------------------------------------------------------------------------
+
+.sidebar {
+  .graph,
+  .toc,
+  .backlinks,
+  .explorer {
+    background: var(--gsd-surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--gsd-r-md);
+    padding: 16px 18px;
+    box-shadow: var(--gsd-shadow);
   }
 
   h3 {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--gsd-ever);
+    margin: 0 0 8px;
+  }
+}
+
+.graph .graph-outer {
+  border: none;
+  border-radius: var(--gsd-r-sm);
+  background: var(--gsd-sunk);
+}
+
+.backlinks ul li a,
+.toc .toc-content a {
+  background: none;
+  padding: 0;
+  font-weight: 600;
+}
+
+.page-title {
+  font-family: var(--headerFont);
+  color: var(--gsd-ever);
+  margin-bottom: 14px;
+}
+
+// Search as a rounded pill
+.search .search-button {
+  background: var(--gsd-surface);
+  border: 1px solid var(--lightgray);
+  border-radius: 99px;
+  padding: 8px 16px;
+}
+
+.explorer {
+  .folder-container,
+  .nav-folder-title { border: none; }
+
+  button.explorer-toggle { font-family: var(--headerFont); }
+
+  ul.explorer-ul {
+    a { background: none; padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+    a:hover { background: var(--gsd-chip); }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Note body — the Idea gets a warm highlight box, the Compass becomes tiles.
+// Driven by the note structure itself (## Idea, ## Compass) via the
+// markup the templates produce, so no per-note markup is required.
+// ---------------------------------------------------------------------------
+
+article {
+  h2 {
+    color: var(--gsd-ever);
+    font-size: 1.28rem;
+    margin: 26px 0 8px;
   }
 
-  p {
-    font-size: 0.9rem;
+  // The first paragraph after "## Idea" is the one-line thesis
+  h2#idea + p {
+    background: var(--gsd-warm);
+    border-radius: var(--gsd-r-sm);
+    padding: 14px 18px;
+    font-size: 1.06rem;
+    margin-bottom: 16px;
+  }
+
+  // Compass directions: each is a bolded label followed by prose
+  h2#compass ~ p {
+    background: var(--gsd-sunk);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--gsd-r-sm);
+    padding: 13px 16px;
+    margin: 0 0 10px;
+
+    strong {
+      font-family: var(--headerFont);
+      color: var(--gsd-ever);
+      font-size: 1.02em;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid var(--gsd-bud);
+    background: var(--gsd-sunk);
+    border-radius: 0 var(--gsd-r-sm) var(--gsd-r-sm) 0;
+    padding: 12px 18px;
+  }
+
+  hr { border-color: var(--lightgray); }
+}
+
+// ---------------------------------------------------------------------------
+// Landing page — the welcome card, garden beds and freshly-planted row
+// ---------------------------------------------------------------------------
+
+.garden-hero {
+  background: var(--gsd-surface);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--gsd-r-lg);
+  box-shadow: var(--gsd-shadow);
+  padding: 30px 36px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: center;
+  margin: 4px 0 22px;
+}
+
+.garden-tagline {
+  font-family: var(--headerFont);
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--gsd-ever);
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+
+.garden-subtitle {
+  color: var(--gray);
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.garden-stages { display: grid; gap: 10px; }
+
+.garden-stage {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.9rem;
+
+  .stage-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    font-size: 1.1rem;
+  }
+
+  b {
+    font-family: var(--headerFont);
+    display: block;
+    font-size: 0.97rem;
     color: var(--darkgray);
-    margin: 0;
-    line-height: 1.6;
   }
+
+  small { color: var(--gray); }
 }
 
-.area-icon {
-  font-size: 1.5rem;
+.stage-icon.seed { background: #f6efd6; }
+.stage-icon.budding { background: #e8f3df; }
+.stage-icon.evergreen { background: #dcebdf; }
+
+:root[saved-theme="dark"] {
+  .stage-icon.seed { background: #2f2a16; }
+  .stage-icon.budding { background: #22301d; }
+  .stage-icon.evergreen { background: #1d2c22; }
 }
 
-.garden-start {
-  text-align: center;
-  margin: 1rem 0;
-  font-size: 0.95rem;
+.garden-beds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 0 0 26px;
+}
+
+.garden-bed {
+  background: var(--gsd-surface);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--gsd-r-md);
+  box-shadow: var(--gsd-shadow);
+  padding: 18px 20px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+
+  &:hover { border-color: var(--gsd-bud); transform: translateY(-2px); }
+
+  .bed-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--gsd-ever);
+
+    a { background: none; padding: 0; margin: 0; color: inherit; }
+  }
+
+  p { margin: 6px 0 0; font-size: 0.9rem; color: var(--gray); line-height: 1.55; }
+}
+
+.bed-count {
+  font-family: var(--bodyFont);
+  font-weight: 700;
+  font-size: 0.74rem;
+  background: var(--gsd-chip);
+  color: var(--secondary);
+  border-radius: 99px;
+  padding: 2px 10px;
+  flex: none;
+}
+
+.garden-fresh {
+  h3 { font-size: 1.1rem; color: var(--gsd-ever); margin: 0 0 10px; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  li {
+    background: var(--gsd-surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--gsd-r-sm);
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    margin: 0;
+
+    a { background: none; padding: 0; }
+    small { display: block; color: var(--gray); font-size: 0.78rem; font-weight: 400; }
+  }
 }
 
 .garden-philosophy {
-  margin: 1.5rem auto;
-  max-width: 600px;
+  margin: 26px auto 0;
+  max-width: 640px;
 
   blockquote {
-    border-left-color: var(--tertiary);
-    font-size: 0.9rem;
+    border-left: none;
+    border-top: 1px solid var(--lightgray);
+    border-bottom: 1px solid var(--lightgray);
+    border-radius: 0;
+    background: none;
+    text-align: center;
+    font-style: italic;
     color: var(--gray);
+    font-size: 0.92rem;
+    padding: 16px 20px;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Narrow screens
+// ---------------------------------------------------------------------------
+
+@media all and (max-width: 1200px) {
+  .garden-beds { grid-template-columns: repeat(2, 1fr); }
+  .garden-fresh ul { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media all and (max-width: 800px) {
+  .garden-hero {
+    grid-template-columns: 1fr;
+    padding: 24px 22px;
+    gap: 22px;
+  }
+  .garden-beds,
+  .garden-fresh ul { grid-template-columns: 1fr; }
+  #quartz-body .center > .page-header { padding: 20px 20px 8px; }
+  #quartz-body .center > article { padding: 6px 20px 24px; }
 }

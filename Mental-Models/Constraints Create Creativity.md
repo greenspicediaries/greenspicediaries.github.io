@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [mental-model, framework, content/strategy]
+tags: [stage/seed, mental-model, framework, content/strategy]
 date: 2026-10-01
 ---
 

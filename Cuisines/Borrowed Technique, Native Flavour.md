@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [cuisine, content/writing, technique]
+tags: [stage/budding, cuisine, content/writing, technique]
 date: 2026-10-01
 ---
 

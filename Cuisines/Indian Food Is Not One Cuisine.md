@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [cuisine/indian, content/writing]
+tags: [stage/evergreen, cuisine/indian, content/writing]
 date: 2026-10-01
 ---
 

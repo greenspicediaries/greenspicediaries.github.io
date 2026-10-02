@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [routine, kitchen/meal-prep, framework]
+tags: [stage/evergreen, routine, kitchen/meal-prep, framework]
 date: 2026-10-01
 ---
 

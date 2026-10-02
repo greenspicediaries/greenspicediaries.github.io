@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [nutrition/protein, nutrition/plant-based, cuisine/indian]
+tags: [stage/evergreen, nutrition/protein, nutrition/plant-based, cuisine/indian]
 date: 2026-10-01
 ---
 

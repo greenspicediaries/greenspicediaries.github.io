@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [spice, cuisine/indian, technique/heat]
+tags: [stage/budding, spice, cuisine/indian, technique/heat]
 date: 2026-10-01
 ---
 

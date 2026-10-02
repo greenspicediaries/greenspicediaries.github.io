@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [content/strategy, framework]
+tags: [stage/budding, content/strategy, framework]
 date: 2026-10-01
 ---
 

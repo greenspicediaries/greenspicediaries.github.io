@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [content/strategy, cuisine/indian]
+tags: [stage/budding, content/strategy, cuisine/indian]
 date: 2026-10-01
 ---
 

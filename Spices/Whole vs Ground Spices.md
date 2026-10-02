@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [spice, kitchen/pantry]
+tags: [stage/budding, spice, kitchen/pantry]
 date: 2026-10-01
 ---
 

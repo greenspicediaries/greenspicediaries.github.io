@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [kitchen/meal-prep, kitchen/systems, routine]
+tags: [stage/budding, kitchen/meal-prep, kitchen/systems, routine]
 date: 2026-10-01
 ---
 

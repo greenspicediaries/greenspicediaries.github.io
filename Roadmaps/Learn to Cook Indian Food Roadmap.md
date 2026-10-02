@@ -1,6 +1,6 @@
 ---
 type: roadmap
-tags: [cuisine/indian, technique, roadmap]
+tags: [stage/budding, cuisine/indian, technique, roadmap]
 date: 2026-10-01
 ---
 

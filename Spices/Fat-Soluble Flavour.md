@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [spice, nutrition/food-science]
+tags: [stage/evergreen, spice, nutrition/food-science]
 date: 2026-10-01
 ---
 

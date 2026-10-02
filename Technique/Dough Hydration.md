@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [technique/dough, technique/texture]
+tags: [stage/seed, technique/dough, technique/texture]
 date: 2026-10-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [technique/seasoning]
+tags: [stage/evergreen, technique/seasoning]
 date: 2026-10-01
 ---
 

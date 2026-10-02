@@ -23,30 +23,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Fraunces
-      body: Karla
+      header: Fredoka
+      body: Nunito
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#fbf9f3"
-        lightgray: "#e7e2d7"
-        gray: "#b3ab99"
-        darkgray: "#4b4a41"
-        dark: "#2a2b25"
-        secondary: "#3d6b4a"
-        tertiary: "#c7823f"
-        highlight: rgba(125, 156, 124, 0.15)
-        textHighlight: "#e8c84788"
+        light: "#f1f6ec"
+        lightgray: "#d6e2cc"
+        gray: "#5c6b59"
+        darkgray: "#1f2d20"
+        dark: "#1f5e3a"
+        secondary: "#2e7a4c"
+        tertiary: "#6aa84f"
+        highlight: "#ebf4e3"
+        textHighlight: "#f0dfa8"
       darkMode:
-        light: "#171814"
-        lightgray: "#383a32"
-        gray: "#656557"
-        darkgray: "#d6d3c6"
-        dark: "#eceade"
-        secondary: "#8fb79a"
-        tertiary: "#d99a57"
-        highlight: rgba(125, 156, 124, 0.15)
-        textHighlight: "#b39b0288"
+        light: "#141a13"
+        lightgray: "#2c3a2a"
+        gray: "#8c9b87"
+        darkgray: "#e2eadd"
+        dark: "#a9d8b4"
+        secondary: "#7ac795"
+        tertiary: "#d8b45e"
+        highlight: "#1e2a1d"
+        textHighlight: "#6b5a1f"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true

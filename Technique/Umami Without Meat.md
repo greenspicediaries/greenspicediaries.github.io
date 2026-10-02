@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [technique/flavour, nutrition/plant-based]
+tags: [stage/budding, technique/flavour, nutrition/plant-based]
 date: 2026-10-01
 ---
 

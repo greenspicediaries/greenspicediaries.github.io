@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [nutrition/protein, nutrition/food-science]
+tags: [stage/seed, nutrition/protein, nutrition/food-science]
 date: 2026-10-01
 ---
 

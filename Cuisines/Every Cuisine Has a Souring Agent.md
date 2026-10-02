@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [cuisine, technique/seasoning, technique/flavour]
+tags: [stage/budding, cuisine, technique/seasoning, technique/flavour]
 date: 2026-10-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [kitchen/pantry, kitchen/systems]
+tags: [stage/budding, kitchen/pantry, kitchen/systems]
 date: 2026-10-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [nutrition, mental-model, content/writing]
+tags: [stage/budding, nutrition, mental-model, content/writing]
 date: 2026-10-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: atomic
-tags: [mental-model, routine]
+tags: [stage/budding, mental-model, routine]
 date: 2026-10-01
 ---
 
