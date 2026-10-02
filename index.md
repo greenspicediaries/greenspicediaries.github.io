@@ -1,5 +1,5 @@
 ---
-title: Green Spice Diaries
+title: Green Spice's Diary
 ---
 
 <div class="garden-hero">
