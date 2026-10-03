@@ -323,6 +323,18 @@ function cmdCheck({ strict }) {
     byName.get(name).push(rel)
 
     const text = fs.readFileSync(path.join(ROOT, rel), "utf8")
+
+    // Em dashes are not used anywhere in the garden. A colon, a comma, a pair
+    // of brackets or a full stop always does the job, so flag any that slip in.
+    const emDashLines = text
+      .split("\n")
+      .map((line, i) => (line.includes("\u2014") ? i + 1 : 0))
+      .filter(Boolean)
+    if (emDashLines.length) {
+      const label = emDashLines.length > 1 ? "lines" : "line"
+      problems.push(`em dash in ${rel} (${label} ${emDashLines.join(", ")})`)
+    }
+
     const fm = splitFrontmatter(text)
     if (!fm) {
       problems.push(`missing frontmatter: ${rel}`)

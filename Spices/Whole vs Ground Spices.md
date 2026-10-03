@@ -19,14 +19,14 @@ Standard spice-handling practice across Indian home kitchens; the shelf-life and
 
 ## Compass
 
-**Roots** — *where this comes from*
-The distinction only matters because spice flavour is volatile and [[Fat-Soluble Flavour]] escapes once the cell wall is broken, and it is the first real decision you make in any [[Tempering]] — seeds that pop, or powder that blooms.
+**Roots:** *where this comes from*
+The distinction only matters because spice flavour is volatile and [[Fat-Soluble Flavour]] escapes once the cell wall is broken, and it is the first real decision you make in any [[Tempering]]: seeds that pop, or powder that blooms.
 
-**Paths** — *where this leads*
-Taken seriously it changes how you shop and store, turning the spice drawer into a two-tier system of whole spices bought in volume and small batches ground weekly, which is one of the clearest arguments for treating the [[Pantry as Infrastructure]]. It also explains why [[Garam Masala Is a Finishing Spice]] — a ground blend added early has nothing left to give by the time the dish is served.
+**Paths:** *where this leads*
+Taken seriously it changes how you shop and store, turning the spice drawer into a two-tier system of whole spices bought in volume and small batches ground weekly, which is one of the clearest arguments for treating the [[Pantry as Infrastructure]]. It also explains why [[Garam Masala Is a Finishing Spice]], since a ground blend added early has nothing left to give by the time the dish is served.
 
-**Neighbors** — *what lives nearby*
+**Neighbors:** *what lives nearby*
 It is the same trade-off as whole-bean versus pre-ground coffee, and it rhymes with [[Mise en Place]] in that both are about deciding when preparation should happen rather than whether it should.
 
-**Clash** — *what pushes against this*
-Grinding fresh is genuinely slower, and a weeknight dinner made with four-month-old powder still tastes good enough that the purist position can tip into [[Toxic Productivity]] in the kitchen. Some spices also barely care — turmeric and chilli lose far less to grinding than cumin or coriander do, so the rule is worth applying selectively rather than everywhere.
+**Clash:** *what pushes against this*
+Grinding fresh is genuinely slower, and a weeknight dinner made with four-month-old powder still tastes good enough that the purist position can tip into [[Toxic Productivity]] in the kitchen. Some spices also barely care: turmeric and chilli lose far less to grinding than cumin or coriander do, so the rule is worth applying selectively rather than everywhere.

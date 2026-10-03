@@ -28,7 +28,7 @@ title: Green Spice's Diary
 <span class="bed-count">4 notes</span>
 </div>
 
-Where the authority lives — [[Tempering]] under all its regional names, why [[Fat-Soluble Flavour]] makes fat non-negotiable, and why [[Garam Masala Is a Finishing Spice]].
+Where the authority lives: [[Tempering]] under all its regional names, why [[Fat-Soluble Flavour]] makes fat non-negotiable, and why [[Garam Masala Is a Finishing Spice]].
 </div>
 
 <div class="garden-bed">
@@ -40,7 +40,7 @@ Where the authority lives — [[Tempering]] under all its regional names, why [[
 <span class="bed-count">7 notes</span>
 </div>
 
-The craft underneath the recipes — the [[Maillard Reaction]], [[Crisp Is the Absence of Water]], [[Emulsion]] for creaminess without cream, and [[Cooking by Signal, Not by Timer]].
+The craft underneath the recipes: the [[Maillard Reaction]], [[Crisp Is the Absence of Water]], [[Emulsion]] for creaminess without cream, and [[Cooking by Signal, Not by Timer]].
 </div>
 
 <div class="garden-bed">
@@ -52,7 +52,7 @@ The craft underneath the recipes — the [[Maillard Reaction]], [[Crisp Is the A
 <span class="bed-count">4 notes</span>
 </div>
 
-Food science without the moralising — [[Protein Complementarity]], [[Satiety Over Calories]], and the reminder that [[Healthy Is Not a Permission Slip]].
+Food science without the moralising: [[Protein Complementarity]], [[Satiety Over Calories]], and the reminder that [[Healthy Is Not a Permission Slip]].
 </div>
 
 <div class="garden-bed">
@@ -64,7 +64,7 @@ Food science without the moralising — [[Protein Complementarity]], [[Satiety O
 <span class="bed-count">3 notes</span>
 </div>
 
-Systems, not gadgets — [[Mise en Place]], the [[Two-Cook-Window Strategy]], and treating the [[Pantry as Infrastructure]].
+Systems, not gadgets: [[Mise en Place]], the [[Two-Cook-Window Strategy]], and treating the [[Pantry as Infrastructure]].
 </div>
 
 <div class="garden-bed">
@@ -76,7 +76,7 @@ Systems, not gadgets — [[Mise en Place]], the [[Two-Cook-Window Strategy]], an
 <span class="bed-count">3 notes</span>
 </div>
 
-[[Indian Food Is Not One Cuisine]] — dozens of them, disagreeing about fat, staple and spice. Plus [[Every Cuisine Has a Souring Agent]].
+[[Indian Food Is Not One Cuisine]], but dozens of them, disagreeing about fat, staple and spice. Plus [[Every Cuisine Has a Souring Agent]].
 </div>
 
 <div class="garden-bed">
@@ -88,7 +88,7 @@ Systems, not gadgets — [[Mise en Place]], the [[Two-Cook-Window Strategy]], an
 <span class="bed-count">4 notes</span>
 </div>
 
-The life around the food — [[The Sunday Reset]], [[Cook Once, Eat Twice]], [[Leftover Makeover]] and [[Wind-Down as a Boundary]].
+The life around the food: [[The Sunday Reset]], [[Cook Once, Eat Twice]], [[Leftover Makeover]] and [[Wind-Down as a Boundary]].
 </div>
 
 <div class="garden-bed">
@@ -100,7 +100,7 @@ The life around the food — [[The Sunday Reset]], [[Cook Once, Eat Twice]], [[L
 <span class="bed-count">4 notes</span>
 </div>
 
-Making things people actually stop for — why [[Cultural Specificity Is an Asset]], how [[The Reframe Is the Hook]], and the case to [[Show Your Work]].
+Making things people actually stop for: why [[Cultural Specificity Is an Asset]], how [[The Reframe Is the Hook]], and the case to [[Show Your Work]].
 </div>
 
 <div class="garden-bed">
@@ -112,7 +112,7 @@ Making things people actually stop for — why [[Cultural Specificity Is an Asse
 <span class="bed-count">3 notes</span>
 </div>
 
-The thinking underneath all of it — [[Consistency Over Intensity]], [[Constraints Create Creativity]], and the failure mode of [[Toxic Productivity]].
+The thinking underneath all of it: [[Consistency Over Intensity]], [[Constraints Create Creativity]], and the failure mode of [[Toxic Productivity]].
 </div>
 
 <div class="garden-bed">
@@ -124,7 +124,7 @@ The thinking underneath all of it — [[Consistency Over Intensity]], [[Constrai
 <span class="bed-count">1 note</span>
 </div>
 
-Written companions to the videos. The [[Learn to Cook Indian Food Roadmap]] — six stages, twelve weeks.
+Written companions to the videos. The [[Learn to Cook Indian Food Roadmap]] covers six stages over twelve weeks.
 </div>
 
 </div>
@@ -144,6 +144,6 @@ Written companions to the videos. The [[Learn to Cook Indian Food Roadmap]] — 
 
 <div class="garden-philosophy">
 
-> *"A digital garden is a collection of notes at various stages of development — Seeds, Budding, and Evergreens — connected by links rather than sorted by dates. There are no folders in the brain, only thoughts connected to other thoughts."*
+> *"A digital garden is a collection of notes at various stages of development (Seeds, Budding, and Evergreens) connected by links rather than sorted by dates. There are no folders in the brain, only thoughts connected to other thoughts."*
 
 </div>

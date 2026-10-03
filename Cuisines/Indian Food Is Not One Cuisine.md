@@ -19,14 +19,14 @@ Regional food scholarship, notably K.T. Achaya's *Indian Food: A Historical Comp
 
 ## Compass
 
-**Roots** — *where this comes from*
+**Roots:** *where this comes from*
 It is the geographic fact behind why [[Tempering]] carries a different name, fat and spice order in every region, and it belongs to the general problem of a dominant export version standing in for a whole tradition.
 
-**Paths** — *where this leads*
-For a cooking channel it is a near-infinite content supply — every region is an unexplored set of dishes and techniques — and it is the strongest version of [[Cultural Specificity Is an Asset]], since naming Uttarakhandi chainsoo or Surati khaman is more interesting than naming "curry". It also makes [[Every Cuisine Has a Souring Agent]] legible as a regional variable rather than a detail.
+**Paths:** *where this leads*
+For a cooking channel it is a near-infinite content supply, since every region is an unexplored set of dishes and techniques, and it is the strongest version of [[Cultural Specificity Is an Asset]], since naming Uttarakhandi chainsoo or Surati khaman is more interesting than naming "curry". It also makes [[Every Cuisine Has a Souring Agent]] legible as a regional variable rather than a detail.
 
-**Neighbors** — *what lives nearby*
-It sits beside the same observation about Chinese or Italian cooking, both equally flattened in export, and it is the cultural counterpart to [[Borrowed Technique, Native Flavour]] — one is about internal variety, the other about traffic across borders.
+**Neighbors:** *what lives nearby*
+It sits beside the same observation about Chinese or Italian cooking, both equally flattened in export, and it is the cultural counterpart to [[Borrowed Technique, Native Flavour]]: one is about internal variety, the other about traffic across borders.
 
-**Clash** — *what pushes against this*
-Pushed too far it becomes gatekeeping, where every dish needs a regional disclaimer and home cooks are made anxious about authenticity they never claimed. The shared vocabulary is also real — the spice set, the legume-and-grain structure, the tempering move do genuinely recur — so "not one cuisine" should not be read as "nothing in common".
+**Clash:** *what pushes against this*
+Pushed too far it becomes gatekeeping, where every dish needs a regional disclaimer and home cooks are made anxious about authenticity they never claimed. The shared vocabulary is also real: the spice set, the legume-and-grain structure and the tempering move do genuinely recur, so "not one cuisine" should not be read as "nothing in common".
